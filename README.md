@@ -5,6 +5,7 @@ Ce projet consiste en la création d'une API Flask déployée sur Minikube, avec
 ## Contenu du Projet
 
 - **app.py:** Fichier principal contenant le code de l'API Flask.
+- **Dockerfile:** Fichier pour la création de l'image Docker.
 - **deployment.yaml:** Fichier de déploiement Kubernetes pour l'application.
 - **service.yaml:** Fichier de service Kubernetes pour l'application.
 - **ingress.yaml:** Fichier Ingress Kubernetes pour rendre l'application accessible depuis l'extérieur.
@@ -20,8 +21,10 @@ Ce projet consiste en la création d'une API Flask déployée sur Minikube, avec
 ### Déploiement de l'Application
 
 1. Démarrez Minikube : `minikube start`
-2. Appliquez les fichiers de déploiement : `kubectl apply -f deployment.yaml -f service.yaml -f ingress.yaml -f hpa.yaml`
-3. Vérifiez le statut du déploiement : `kubectl get pods`
+2. Construisez l'image Docker : `docker build -t mrandrianasolo/api-minikube:latest .`
+3. Poussez l'image vers Docker Hub : `docker push mrandrianasolo/api-minikube:latest`
+4. Appliquez les fichiers de déploiement : `kubectl apply -f deployment.yaml -f service.yaml -f ingress.yaml -f hpa.yaml`
+5. Vérifiez le statut du déploiement : `kubectl get pods`
 
 ### Accès à l'Application
 
@@ -35,6 +38,23 @@ Ce projet consiste en la création d'une API Flask déployée sur Minikube, avec
 - **/read_data (GET):** Lit des données depuis la base de données.
 - **/exit (GET):** Ferme le serveur Flask.
 - **/cpu (GET):** Simule une utilisation intensive du CPU.
+
+### Base de Données
+
+1. Déployez une base de données : [Instructions ici]
+2. Configurez la base de données via les variables d'environnement ou ConfigMap.
+
+### Routes Additionnelles
+
+- **POST /store_db (POST):** Stocke des données en base de données.
+- **GET /read_db (GET):** Lit une donnée depuis la base de données.
+
+## Auteurs
+
+- [Votre Nom]
+
+N'hésitez pas à contribuer, signaler des problèmes ou proposer des améliorations !
+
 
 ## Auteurs
 
