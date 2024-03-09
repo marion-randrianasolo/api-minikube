@@ -17,15 +17,18 @@ spec:
         image: mrandrianasolo/api-minikube:latest
         ports:
         - containerPort: 5000
-         env:
+        env:
         - name: DB_HOST
-          value: "mysql-service"  # Nom du service de base de données
+          value: "mysql-service"
         - name: DB_PORT
           value: "3306"
         - name: DB_USER
           value: "root"
         - name: DB_PASSWORD
-          value: "password"
+          valueFrom:
+            secretKeyRef:
+              name: mysql-secret
+              key: mysql-root-password
         - name: DB_NAME
           value: "mydatabase"
         - name: STORE_DATA_ROUTE
