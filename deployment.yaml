@@ -14,6 +14,6 @@ spec:
     spec:
       containers:
       - name: flask-app-container
-        image: your-image:tag  # Remplacer "your-image:tag" par le nom de votre image Docker et la version
+        image: mrandrianasolo/api-minikube:latest
         ports:
         - containerPort: 5000
