@@ -1,10 +1,10 @@
-apiVersion:c
+apiVersion: networking.k8s.io/v1
 kind: Ingress
 metadata:
   name: flask-app-ingress
 spec:
   rules:
-  - host: localhost #vérifie si le sous domaine fonctionne...
+  - host: nom_du_host #Mettre le nom du host ici 
     http:
       paths:
       - path: /
@@ -14,5 +14,3 @@ spec:
             name: flask-app-service
             port:
               number: 80
-
-              192.168.59.100
