@@ -12,6 +12,8 @@ db_port = os.environ.get('DB_PORT', '3306')
 db_user = os.environ.get('DB_USER', 'root')
 db_password = os.environ.get('DB_PASSWORD', 'password')
 db_name = os.environ.get('DB_NAME', 'mydatabase')
+store_data_route = os.environ.get('STORE_DATA_ROUTE', '/store_data')
+read_data_route = os.environ.get('READ_DATA_ROUTE', '/read_data')
 
 # Connexion à la base de données
 engine = create_engine(f'mysql://{db_user}:{db_password}@{db_host}:{db_port}/{db_name}')
