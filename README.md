@@ -41,20 +41,13 @@ Ce projet consiste en la création d'une API Flask déployée sur Minikube, avec
 
 ### Base de Données
 
-1. Déployez une base de données : [Instructions ici]
-2. Configurez la base de données via les variables d'environnement ou ConfigMap.
+1. Déploiement d'une base de données 
+2. Configuration de la base de données via les variables d'environnement ou ConfigMap.
 
 ### Routes Additionnelles
 
 - **POST /store_db (POST):** Stocke des données en base de données.
 - **GET /read_db (GET):** Lit une donnée depuis la base de données.
-
-## Auteurs
-
-- [Votre Nom]
-
-N'hésitez pas à contribuer, signaler des problèmes ou proposer des améliorations !
-
 
 ## Auteurs
 
