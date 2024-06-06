@@ -1,4 +1,4 @@
-name: Build and Push Docker image
+name: Build and Push Docker image on merge to master
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  build:
+  build-and-push:
     runs-on: ubuntu-latest
 
     steps:
@@ -28,7 +28,7 @@ jobs:
         context: .
         file: ./Dockerfile
         push: true
-        tags: mrandrianasolo/api-minikube-ci:latest
+        tags: mrandrianasolo/api-minikube-ci:${{ github.sha }}
 
     - name: Log out from Docker Hub
       run: docker logout
