@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: flask-app-container
-        image: mrandrianasolo/api-minikube:latest
+        image: mrandrianasolo/api-minikube-ci:latest
         ports:
         - containerPort: 5000
         env:
